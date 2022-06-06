@@ -10,3 +10,11 @@ Feature: Login
     And I select the language as 'English (Indian)'
     And I click on login
     Then I should get access to the portal with the title as 'OpenEMR'
+
+  Scenario: Invalid Credential
+    Given I have browser with openemr application
+    When I enter username as 'john'
+    And I enter password as 'john123'
+    And I select the language as 'English (Indian)'
+    And I click on login
+    Then I should get the message as 'Invalid username or password'
